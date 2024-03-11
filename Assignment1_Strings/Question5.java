@@ -24,19 +24,17 @@ public class StringAssignment {
                 if (Character.isLetterOrDigit(currentChar)) {
                     temp.append(currentChar);
                 } else if (temp.length() > 0) {
-                    String word = temp.toString().toLowerCase(); // Ignore case
+                    String word = temp.toString().toLowerCase(); 
                     map.put(word, map.getOrDefault(word, 0) + 1);
-                    temp.setLength(0); // Clear the StringBuilder for the next word
+                    temp.setLength(0);
                 }
             }
 
-            // Check for the last word in the text
             if (temp.length() > 0) {
-                String lastWord = temp.toString().toLowerCase(); // Ignore case
+                String lastWord = temp.toString().toLowerCase();
                 map.put(lastWord, map.getOrDefault(lastWord, 0) + 1);
             }
 
-            // Print word frequencies
             for (String word : map.keySet()) {
                 System.out.println(word + ": " + map.get(word));
             }
